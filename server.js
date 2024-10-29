@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 
 const db = require('./db')
-
+require('dotenv').config();
 
 
 
@@ -26,8 +26,11 @@ app.use('/person',personRoutes)
 app.use('/',menuRouter)
 
 
+const PORT = process.env.PORT || 3000;
 
-app.listen((3000),()=>{
+
+
+app.listen((PORT),()=>{
   console.log("Server is live");
   
 
